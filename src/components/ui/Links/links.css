@@ -1,0 +1,26 @@
+.links {
+  position: absolute;
+  bottom: 3rem;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--clr-white-500);
+}
+
+.links-container {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  display: flex;
+  gap: 1rem;
+}
+
+.link-box {
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  padding: 8px;
+  background: var(--clr-white-900);
+  border: 1px solid var(--clr-white-500);
+  border-radius: 50%;
+  cursor: pointer;
+}

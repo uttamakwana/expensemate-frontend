@@ -1,4 +1,4 @@
-.login-form {
+.form {
   border: 1px solid var(--clr-white-500);
   padding: 2rem !important;
 
@@ -15,6 +15,7 @@
       left: 8px;
       font-size: 12px;
       background-color: var(--clr-white-900);
+      font-weight: 500;
     }
 
     span {
@@ -25,6 +26,7 @@
       padding-inline: 1rem;
       transition: all ease 200ms;
       pointer-events: none;
+      font-size: clamp(14px, 2vw, 16px);
     }
 
     .eye-icon {
@@ -36,47 +38,28 @@
     }
   }
 
-  p.other-text {
+  p.form-other-text {
     align-self: flex-end;
     display: inline-block;
     font-size: 14px;
     margin-right: -8px;
   }
 
-  p.other-text:hover {
+  p.form-other-text:hover {
     background-color: var(--clr-white-800);
     cursor: pointer;
   }
 }
 
-.login-form button:focus,
-.login-form button:active {
+.form button:focus,
+.form button:active {
   opacity: 0.5;
 }
 
-.login-links {
-  position: absolute;
-  bottom: 3rem;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: var(--clr-white-500);
-}
 
-.login-links-container {
-  position: absolute;
-  bottom: 3rem;
-  left: 50%;
-  transform: translate(-50%, 50%);
-  display: flex;
-  gap: 1rem;
-}
 
-.login-link-box {
-  font-size: clamp(1.5rem, 2vw, 2rem);
-  padding: 8px;
-  background: var(--clr-white-900);
-  border: 1px solid var(--clr-white-500);
-  border-radius: 50%;
-  cursor: pointer;
+@media (width <= 468px) {
+  .form {
+    padding: 1rem !important;
+  }
 }

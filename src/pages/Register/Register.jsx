@@ -1,17 +1,17 @@
 import { useRef, useState } from "react";
-import { Button, MainLogo, SecondaryLogo } from "../../components";
-import "./register.css";
+import { Button, Links, MainLogo, SecondaryLogo } from "../../components";
 import { useNavigate } from "react-router-dom";
-import {
-  CloseEyeIcon,
-  EyeIcon,
-  FrontendMentorIcon,
-  GithubIcon,
-  InstagramIcon,
-  LinkedinIcon,
-} from "../../constants/icons.js";
+import { CloseEyeIcon, EyeIcon } from "../../constants/icons.js";
+import { handleEyeClick, handleRegisterSubmit } from "./utils.js";
+import "../styles.css";
 
 const Register = () => {
+  // navigate
+  const navigate = useNavigate("");
+  // refs
+  const passwordRef = useRef(null);
+  const confirmPasswordRef = useRef(null);
+  // states
   const [registerFormData, setregisterFormData] = useState({
     firstName: "",
     lastName: "",
@@ -19,45 +19,21 @@ const Register = () => {
     password: "",
     confirmPassword: "",
   });
-
-  const passwordRef = useRef(null);
-  const confirmPasswordRef = useRef(null);
   const [isShowPassword, setIsShowPassword] = useState(false);
   const [isShowConfirmPassword, setIsShowConfirmPassword] = useState(false);
-  const navigate = useNavigate("");
-
-  function handleEyeClick() {
-    setIsShowPassword(!isShowPassword);
-    if (passwordRef.current.type === "text") {
-      passwordRef.current.type = "password";
-    } else {
-      passwordRef.current.type = "text";
-    }
-  }
-
-  function handleEyeClickOnConfirmPassword() {
-    setIsShowConfirmPassword(!isShowConfirmPassword);
-    if (confirmPasswordRef.current.type === "text") {
-      confirmPasswordRef.current.type = "password";
-    } else {
-      confirmPasswordRef.current.type = "text";
-    }
-  }
-
-  function handleRegisterSubmit(e) {
-    e.preventDefault();
-  }
 
   return (
     <main className="register-page | min-h-100 p-1 relative">
       <SecondaryLogo />
       <form
         action=""
-        className="register-form | readable-container absolute-center p-1 br-5 flex-col gap-1"
-        onSubmit={handleRegisterSubmit}
+        className="form | readable-container absolute-center br-5 flex-col gap-1"
+        onSubmit={(e) => handleRegisterSubmit(e)}
       >
         <MainLogo />
-        <p className="fs-subheading text-center fw-500">Register</p>
+        <p className="form-heading  | fs-subheading text-center fw-500">
+          Register
+        </p>
         {/* First name + Last name */}
         <div className="even-form-group flex gap-8">
           <div className="form-group | flex-grow-1 relative">
@@ -126,16 +102,22 @@ const Register = () => {
               })
             }
           />
-          {registerFormData.password ? (
-            isShowPassword && registerFormData.password ? (
-              <CloseEyeIcon className="eye-icon" onClick={handleEyeClick} />
-            ) : (
-              <EyeIcon className="eye-icon" onClick={handleEyeClick} />
-            )
-          ) : null}
           <span className={registerFormData.password && "active"}>
             Password
           </span>
+          <div
+            onClick={() =>
+              handleEyeClick(passwordRef, isShowPassword, setIsShowPassword)
+            }
+          >
+            {registerFormData.password ? (
+              isShowPassword && registerFormData.password ? (
+                <CloseEyeIcon className="eye-icon" />
+              ) : (
+                <EyeIcon className="eye-icon" />
+              )
+            ) : null}
+          </div>
         </div>
         {/* Confirm Password */}
         <div className="form-group | relative">
@@ -155,7 +137,15 @@ const Register = () => {
           <span className={registerFormData.confirmPassword && "active"}>
             Confirm Password
           </span>
-          <div onClick={handleEyeClickOnConfirmPassword}>
+          <div
+            onClick={() =>
+              handleEyeClick(
+                confirmPasswordRef,
+                isShowConfirmPassword,
+                setIsShowConfirmPassword
+              )
+            }
+          >
             {registerFormData.confirmPassword ? (
               isShowConfirmPassword && registerFormData.confirmPassword ? (
                 <CloseEyeIcon className="eye-icon" />
@@ -165,29 +155,17 @@ const Register = () => {
             ) : null}
           </div>
         </div>
+        {/* Register Button */}
         <Button>Register</Button>
+        {/* Register Other Text */}
         <p
-          className="other-text italic text-black-800 p-8 br-1 text-right"
+          className="form-other-text italic text-black-800 p-8 br-1 text-right"
           onClick={() => navigate("/login")}
         >
           Already have an account?
         </p>
       </form>
-      <div className="register-links | flex-center"></div>
-      <div className="register-links-container">
-        <div className="register-link-box | bg-white-900">
-          <GithubIcon className="" />
-        </div>
-        <div className="register-link-box | bg-white-900">
-          <LinkedinIcon className="" />
-        </div>
-        <div className="register-link-box | bg-white-900">
-          <InstagramIcon className="" />
-        </div>
-        <div className="register-link-box | bg-white-900">
-          <FrontendMentorIcon className="" />
-        </div>
-      </div>
+      <Links />
     </main>
   );
 };
