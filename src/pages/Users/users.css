@@ -1,0 +1,42 @@
+.users-loader {
+  position: fixed;
+  inset: 0;
+}
+
+.user-card {
+  height: 150px;
+}
+
+.user-card > * {
+  z-index: 10;
+}
+
+.user-card img {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 50%;
+  top: 0;
+  object-fit: cover;
+  z-index: 5;
+}
+
+.user-card button {
+  margin-right: 0 !important;
+  margin-left: auto;
+  background: var(--clr-white-900) !important;
+  box-shadow: none !important;
+}
+
+.user-card button:hover {
+  background-image: linear-gradient(
+    to right,
+    var(--clr-primary-400),
+    var(--clr-accent-400)
+  ) !important;
+  border: none;
+}
+
+.user-card button .plus-icon {
+ font-size: 16px;
+}

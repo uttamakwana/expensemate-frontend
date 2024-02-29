@@ -27,8 +27,8 @@ const Friends = ({ user }) => {
           );
         })
       ) : (
-        <div className="flex-center p-1">
-          <p className="text-center fw-600 text-danger">No friends found!</p>
+        <div className="flex-center flex-col gap-8 bg-white-800 p-1">
+          <p className="text-center fw-600">No friends found!</p>
           <button className="btn oval bg-primary-400 text-white-900 fs-button fw-600">
             Create Friends!
           </button>

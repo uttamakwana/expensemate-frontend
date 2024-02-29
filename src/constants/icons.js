@@ -13,6 +13,8 @@ import { SiFrontendmentor } from "react-icons/si";
 import { FaCodePullRequest } from "react-icons/fa6";
 import { MdDashboard } from "react-icons/md";
 import { BsThreeDotsVertical } from "react-icons/bs";
+import { MdDone } from "react-icons/md";
+import { GiCancel } from "react-icons/gi";
 // export icons
 export {
   FaEye as EyeIcon,
@@ -27,4 +29,6 @@ export {
   FaSearch as SearchIcon,
   MdDashboard as DashboardIcon,
   BsThreeDotsVertical as ThreeDotMenuIcon,
+  MdDone as DoneIcon,
+  GiCancel as CancelIcon,
 };

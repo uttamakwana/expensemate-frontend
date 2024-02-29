@@ -4,10 +4,14 @@ import { useNavigate } from "react-router-dom";
 import { CloseEyeIcon, EyeIcon } from "../../constants/icons.js";
 import { handleEyeClick, handleRegisterSubmit } from "./utils.js";
 import "../styles.css";
+import { useDispatch, useSelector } from "react-redux";
+import BasicLoader from "../../components/Loader/BasicLoader.jsx";
 
 const Register = () => {
   // navigate
   const navigate = useNavigate("");
+  const dispatch = useDispatch();
+  const { loading } = useSelector((state) => state.userReducer);
   // refs
   const passwordRef = useRef(null);
   const confirmPasswordRef = useRef(null);
@@ -28,7 +32,9 @@ const Register = () => {
       <form
         action=""
         className="form | readable-container absolute-center br-5 flex-col gap-1"
-        onSubmit={(e) => handleRegisterSubmit(e)}
+        onSubmit={(e) =>
+          handleRegisterSubmit(e, registerFormData, navigate, dispatch)
+        }
       >
         <MainLogo />
         <p className="form-heading  | fs-subheading text-center fw-500">
@@ -156,7 +162,7 @@ const Register = () => {
           </div>
         </div>
         {/* Register Button */}
-        <Button>Register</Button>
+        <Button>{loading ? <BasicLoader /> : "Reigster"}</Button>
         {/* Register Other Text */}
         <p
           className="form-other-text italic text-black-800 p-8 br-1 text-right"

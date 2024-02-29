@@ -2,7 +2,7 @@
 const Button = ({ children, handleClick, loading }) => {
   return (
     <button
-      className={`btn br-10 bg-primary-400 text-white-900 fw-600 fs-button ${
+      className={`btn br-10 bg-primary-400 text-white-900 fw-600 fs-button flex-center ${
         loading && "button-loading"
       }`}
       onClick={handleClick}

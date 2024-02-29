@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import RequestCard from "./RequestCard";
 import "./requests.css";
 
 const Requests = ({ user, navigate }) => {
@@ -19,7 +20,13 @@ const Requests = ({ user, navigate }) => {
       </div>
     );
   }
-  return <div>Requests</div>;
+  return (
+    <div className="card-grid py-1">
+      {requests.map((req) => (
+        <RequestCard key={req.userId} req={req} />
+      ))}
+    </div>
+  );
 };
 
 export default Requests;
