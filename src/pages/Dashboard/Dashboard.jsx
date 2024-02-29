@@ -15,7 +15,10 @@ const Dashboard = () => {
           <Routes>
             <Route path="/" element={<Main user={user} />} />
             <Route path="/friends" element={<Friends user={user} />} />
-            <Route path="/requests" element={<Requests />} />
+            <Route
+              path="/requests"
+              element={<Requests user={user} navigate={navigate} />}
+            />
             <Route path="/users" element={<Users />} />
             <Route path="/history" element={<History />} />
           </Routes>
