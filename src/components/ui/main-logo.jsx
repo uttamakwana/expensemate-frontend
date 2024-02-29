@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 const MainLogo = () => {
   return (
     <div className="flex-col flex-center">
-      <h1 className="big-logo-heading | text-black-900 ">
+      <h1 className="big-logo-heading | text-black-900">
         Expense<span className="italic text-primary-400 ">Mate</span>
       </h1>
       <p

@@ -1,14 +1,17 @@
 import { Routes, Route } from "react-router-dom";
 // pages
-import { Landing, Login, Register } from "./pages";
+import { Dashbaord, Landing, Login, Register } from "./pages";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
   return (
     <main className="main-app">
+      <Toaster position="top-right" />
       <Routes>
-        <Route exact path="/" element={<Landing />} />
-        <Route exact path="/login" element={<Login />} />
-        <Route exact path="/register" element={<Register />} />
+        <Route path="/" element={<Landing />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/dashboard/*" element={<Dashbaord />} />
       </Routes>
     </main>
   );

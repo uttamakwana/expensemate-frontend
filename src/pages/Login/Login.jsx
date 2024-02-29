@@ -4,10 +4,15 @@ import { useNavigate } from "react-router-dom";
 import { CloseEyeIcon, EyeIcon } from "../../constants/icons.js";
 import { handleEyeClick, handleLoginSubmit } from "./utils.js";
 import "../styles.css";
+import { useDispatch, useSelector } from "react-redux";
 
 const Login = () => {
   // navigate
   const navigate = useNavigate("");
+  // dispatch
+  const dispatch = useDispatch();
+  // redux state
+  const { loading } = useSelector((state) => state.userReducer);
   // ref
   const passwordRef = useRef(null);
   // states
@@ -23,7 +28,17 @@ const Login = () => {
       <form
         action=""
         className="form | readable-container absolute-center p-1 br-5 flex-col gap-1"
-        onSubmit={(e) => handleLoginSubmit(e)}
+        onSubmit={(e) =>
+          handleLoginSubmit(
+            e,
+            {
+              email: loginFormData.email,
+              password: loginFormData.password,
+            },
+            dispatch,
+            navigate
+          )
+        }
       >
         <MainLogo />
         <p className="fs-subheading text-center fw-500">Sign in</p>
@@ -74,7 +89,7 @@ const Login = () => {
           </div>
         </div>
         {/* Login Button */}
-        <Button>Login</Button>
+        <Button loading={loading}>{loading ? "Logging in..." : "Login"}</Button>
         {/* Login Other Text */}
         <p
           className="form-other-text italic text-black-800 p-8 br-1 text-right"

@@ -1,0 +1,110 @@
+.friend-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.friend-card {
+  border: 1px solid var(--clr-white-500);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 2px var(--clr-white-500);
+  transition: scale ease 100ms;
+}
+
+.friend-card > * {
+ z-index: 10;
+}
+
+.friend-card p:first-child {
+  padding: 4px 8px;
+  display: inline-block;
+  background-image: linear-gradient(
+    to right,
+    var(--clr-primary-400),
+    var(--clr-primary-900)
+  );
+  align-self: flex-start;
+  color: var(--clr-white-900);
+  border-radius: 100vmax;
+}
+
+.transaction-text {
+  margin-top: 1rem;
+}
+
+.transaction-text span {
+  color: var(--clr-primary-900);
+  font-weight: 900;
+}
+
+.friend-card button {
+  /* background-image: linear-gradient(
+    to right,
+    var(--clr-white-800),
+    var(--clr-white-900)
+  ); */
+  background-color: transparent;
+  color: var(--clr-black-900);
+  padding: 5px 10px !important;
+  display: inline-block;
+  margin-top: auto;
+  margin-right: auto;
+  border-radius: 100vmax;
+  border: 1px solid var(--clr-white-500);
+  box-shadow: 0 2px 2px var(--clr-white-500);
+}
+
+.friend-card button:hover {
+  background-image: linear-gradient(
+    to right,
+    var(--clr-primary-400),
+    var(--clr-primary-900)
+  );
+  color: var(--clr-white-900);
+}
+
+.transaction-text span {
+  font-weight: 600;
+  border: 1px solid var(--clr-white-500);
+  border-radius: 100vmax;
+  padding: 4px 8px;
+  font-weight: 600;
+}
+
+.transaction-text span.green {
+  background-color: var(--clr-success);
+  color: var(--clr-white-900);
+  font-style: italic;
+}
+
+.transaction-text span.red {
+  font-style: italic;
+  color: var(--clr-white-900);
+  color: var(--clr-danger);
+}
+
+.see-all-transaction-btn {
+ margin-top: 1rem !important;
+ margin-left: auto;
+ margin-right: 0 !important;
+ z-index: 5;
+ background-color: var(--clr-white-900) !important;
+ border: none !important;
+ box-shadow: none !important;
+}
+
+.friend-card img {
+ position: absolute;
+ right: 0;
+ top: 0;
+ bottom: 0;
+ max-width: 100%;
+ width: 50%;
+ height: 100%;
+ object-fit: cover;
+ z-index: 2;
+ opacity: .9;
+}

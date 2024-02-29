@@ -1,0 +1,22 @@
+.header-navigation{
+  display: none !important;
+}
+
+@media (width <= 560px) {
+  .header-navigation {
+    display: flex !important;
+  }
+
+  .header-nav {
+   color: var(--clr-white-900);
+   font-size: clamp(1.5rem, 3vw, 2rem);
+   cursor: pointer;
+   padding: 8px;
+   border-radius: 10px;
+  }
+
+  .header-nav.active {
+   background: var(--clr-white-900);
+   color: var(--clr-primary-400);
+  }
+}

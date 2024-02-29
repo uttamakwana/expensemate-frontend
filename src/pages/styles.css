@@ -51,12 +51,42 @@
   }
 }
 
-.form button:focus,
-.form button:active {
+.form button {
+  position: relative;
+}
+
+.form button:focus {
   opacity: 0.5;
 }
 
+.form button:disabled {
+  opacity: .9;
+  cursor: not-allowed;
+  font-style: italic;
+}
 
+.form button::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  scale: 0 1;
+  transform-origin: left;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.button-loading::before {
+  transform-origin: right;
+  animation: shining 1000ms ease infinite;
+}
+
+@keyframes shining {
+  from {
+    scale: 0 1;
+  }
+  to {
+    scale: 1 1;
+  }
+}
 
 @media (width <= 468px) {
   .form {
