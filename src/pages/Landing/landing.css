@@ -1,0 +1,51 @@
+.landing-page {
+  h1 {
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
+    opacity: 0;
+    animation: fade-in 400ms ease 400ms forwards;
+    span {
+      background-image: radial-gradient(
+        circle at center,
+        var(--clr-primary-400) 0%,
+        var(--clr-primary-500) 100%
+      );
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  p {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    animation: fade-in 400ms ease 800ms forwards;
+    opacity: 0;
+  }
+
+  button {
+    font-size: clamp(14px, 2vw, 1rem);
+    border-radius: 100vmax;
+    padding-inline: 1.5rem;
+    opacity: 0;
+    animation: fade-in 400ms ease 1200ms forwards;
+  }
+
+  img {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.2;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
