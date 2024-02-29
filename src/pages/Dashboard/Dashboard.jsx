@@ -1,28 +1,31 @@
-// componetns
-import { Route, Routes } from "react-router-dom";
-import { Footer, Header, Main } from "../../components";
+// redux
+import { useSelector } from "react-redux";
+// custom hook
 import { useUserLoggedIn } from "../../hooks/useUserLoggedIn";
-import { Friends, History, Requests, Users } from "../index.js";
+// componetns
+import { Footer, Header } from "../../components";
+// constants
+import Loader from "../../constants/Loader/Loader.jsx";
 
 const Dashboard = () => {
   // custom hook
   const [user, navigate] = useUserLoggedIn();
+  // redux
+  const { loading } = useSelector((state) => state.userReducer);
+
+  if (loading) {
+    return (
+      <div className="overlay flex-center">
+        <Loader width={"2.5rem"} height={"2.5rem"} />
+      </div>
+    );
+  }
+
   return (
     <main className="dashboard-page | h-100 flex-col">
       <Header navigate={navigate} />
       <main className="main | bg-white-800 flex-grow-1">
-        <div className="container">
-          <Routes>
-            <Route path="/" element={<Main user={user} />} />
-            <Route path="/friends" element={<Friends user={user} />} />
-            <Route
-              path="/requests"
-              element={<Requests user={user} navigate={navigate} />}
-            />
-            <Route path="/users" element={<Users />} />
-            <Route path="/history" element={<History />} />
-          </Routes>
-        </div>
+        <div className="container">{user.name}</div>
       </main>
       <Footer navigate={navigate} />
     </main>

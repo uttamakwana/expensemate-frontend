@@ -5,7 +5,7 @@ import { CloseEyeIcon, EyeIcon } from "../../constants/icons.js";
 import { handleEyeClick, handleRegisterSubmit } from "./utils.js";
 import "../styles.css";
 import { useDispatch, useSelector } from "react-redux";
-import BasicLoader from "../../components/Loader/BasicLoader.jsx";
+import Loader from "../../constants/Loader/Loader.jsx";
 
 const Register = () => {
   // navigate
@@ -162,7 +162,7 @@ const Register = () => {
           </div>
         </div>
         {/* Register Button */}
-        <Button>{loading ? <BasicLoader /> : "Reigster"}</Button>
+        <Button>{loading ? <Loader /> : "Reigster"}</Button>
         {/* Register Other Text */}
         <p
           className="form-other-text italic text-black-800 p-8 br-1 text-right"

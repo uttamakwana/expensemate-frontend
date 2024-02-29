@@ -1,10 +1,10 @@
-.basic-spinner {
+.spinner {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  border: 1px solid;
-  border-color: #ffffff;
-  border-right-color: #2d4af0;
+  border: 2px solid;
+  border-color: var(--clr-white-500);
+  border-right-color: var(--clr-primary-400);
   animation: spinner-d3wgkg 1s infinite linear;
 }
 
