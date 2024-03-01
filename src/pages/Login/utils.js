@@ -29,8 +29,11 @@ export async function handleLoginSubmit(e, data, dispatch, navigate) {
     dispatch(setLoading(false));
     navigate("/dashboard");
   } catch (error) {
-    console.log(error.response.data.message);
     dispatch(setLoading(false));
+    if (error.message === "Network Error") {
+      return toast.error("Internal server error!");
+    }
     toast.error(error.response.data.message);
+    console.log(error.response.data.message);
   }
 }

@@ -28,9 +28,14 @@ export async function handleRegisterSubmit(e, formData, navigate, dispatch) {
       navigate("/dashboard");
     } catch (error) {
       dispatch(setLoading(false));
+      if (error.message === "Network Error") {
+        return toast.error("Internal server error!");
+      }
+      toast.error(error.response.data.message);
       console.log(error);
     }
   } else {
+    dispatch(setLoading(false));
     toast.error("Please enter the same password!");
   }
 }

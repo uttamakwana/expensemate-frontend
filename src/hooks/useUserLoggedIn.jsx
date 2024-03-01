@@ -25,6 +25,10 @@ export function useUserLoggedIn() {
             const response = await server.get(`/user?id=${user._id}`);
             dispatch(setUser(response.data.data.user));
             dispatch(setLoading(false));
+            localStorage.setItem(
+              "expensemate-user",
+              JSON.stringify(response.data.data.user)
+            );
           } catch (error) {
             toast.error("Something went wrong!");
             dispatch(setLoading(false));

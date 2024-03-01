@@ -5,7 +5,7 @@ import { CloseEyeIcon, EyeIcon } from "../../constants/icons.js";
 import { handleEyeClick, handleRegisterSubmit } from "./utils.js";
 import "../styles.css";
 import { useDispatch, useSelector } from "react-redux";
-import Loader from "../../constants/Loader/Loader.jsx";
+import ButtonLoader from "../../constants/Loader/ButtonLoader.jsx";
 
 const Register = () => {
   // navigate
@@ -59,6 +59,7 @@ const Register = () => {
               First Name
             </span>
           </div>
+          {/* Last Name */}
           <div className="form-group | flex-grow-1 relative">
             <input
               type="text"
@@ -162,7 +163,13 @@ const Register = () => {
           </div>
         </div>
         {/* Register Button */}
-        <Button>{loading ? <Loader /> : "Reigster"}</Button>
+        <Button>
+          {loading ? (
+            <ButtonLoader width={"1rem"} height={"1rem"} />
+          ) : (
+            "Reigster"
+          )}
+        </Button>
         {/* Register Other Text */}
         <p
           className="form-other-text italic text-black-800 p-8 br-1 text-right"
