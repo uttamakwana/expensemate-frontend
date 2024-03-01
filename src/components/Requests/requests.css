@@ -1,0 +1,22 @@
+.request-grid-item-left img {
+  width: 75px;
+  right: 75px;
+  object-fit: cover;
+}
+
+.request-grid-item-right > div {
+  color: var(--clr-white-900);
+  padding: 10px;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  cursor: pointer;
+}
+
+.request-grid-item-right .accept {
+  background: var(--clr-success);
+}
+
+.request-grid-item-right .reject {
+  background: var(--clr-danger);
+}

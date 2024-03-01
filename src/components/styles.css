@@ -1,0 +1,19 @@
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--clr-white-500);
+}
+
+.grid-item-invert {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1rem;
+  padding: 10px 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--clr-white-500);
+}

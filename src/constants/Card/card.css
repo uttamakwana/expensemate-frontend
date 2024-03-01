@@ -1,0 +1,24 @@
+.card-heading {
+ background-image: linear-gradient(to right, var(--clr-primary-400), var(--clr-primary-900));
+ width: max-content;
+ font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+.card-btn {
+ padding: 0.5rem 1rem;
+ background-color: var(--clr-white-900);
+ color: var(--clr-black-900);
+ font-weight: 600;
+ border-radius: 100vmax;
+ border: none;
+ outline: none;
+ margin-top: 1rem;
+ width: max-content;
+ margin-left: auto;
+ border: 1px solid var(--clr-white-500);
+}
+
+.card-btn:hover {
+ background-image: linear-gradient(to right, var(--clr-primary-400), var(--clr-accent-400));
+ color: var(--clr-white-900);
+}

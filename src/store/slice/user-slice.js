@@ -1,17 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  user: JSON.parse(localStorage.getItem("expensemate-user")) || null,
+  client: JSON.parse(localStorage.getItem("expensemate-client")) || null,
   allUsers: null,
   loading: false,
 };
 
-export const userSlice = createSlice({
-  name: "User",
+export const clientSlice = createSlice({
+  name: "Client",
   initialState,
   reducers: {
-    setUser(state, action) {
-      state.user = action.payload;
+    setClient(state, action) {
+      state.client = action.payload;
     },
     setLoading(state, action) {
       state.loading = action.payload;
@@ -22,5 +22,5 @@ export const userSlice = createSlice({
   },
 });
 
-export const { setUser, setLoading, setAllUsers } = userSlice.actions;
-export default userSlice.reducer;
+export const { setClient, setLoading, setAllUsers } = clientSlice.actions;
+export default clientSlice.reducer;

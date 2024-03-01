@@ -1,6 +1,6 @@
 import toast from "react-hot-toast";
 import { server } from "../../api/api.js";
-import { setLoading, setUser } from "../../store/slice/user-slice.js";
+import { setLoading, setClient } from "../../store/slice/user-slice.js";
 
 export function handleEyeClick(ref, value, setValue) {
   setValue(!value);
@@ -22,7 +22,11 @@ export async function handleRegisterSubmit(e, formData, navigate, dispatch) {
         password: formData.password,
       });
       console.log(response.data);
-      dispatch(setUser(response.data.data.user));
+      dispatch(setClient(response.data.data.user));
+      localStorage.setItem(
+        "expensemate-client",
+        JSON.stringify(response.data.data.user)
+      );
       dispatch(setLoading(false));
       toast.success("Registration successfull!");
       navigate("/dashboard");

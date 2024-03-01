@@ -1,6 +1,6 @@
 import toast from "react-hot-toast";
 import { server } from "../../api/api.js";
-import { setLoading, setUser } from "../../store/slice/user-slice.js";
+import { setLoading, setClient } from "../../store/slice/user-slice.js";
 
 export function handleEyeClick(ref, value, setValue) {
   setValue(!value);
@@ -20,9 +20,9 @@ export async function handleLoginSubmit(e, data, dispatch, navigate) {
       password: data.password,
     });
     console.log(response.data);
-    dispatch(setUser(response.data.data.user));
+    dispatch(setClient(response.data.data.user));
     localStorage.setItem(
-      "expensemate-user",
+      "expensemate-client",
       JSON.stringify(response.data.data.user)
     );
     toast.success(response.data.message);
@@ -33,7 +33,7 @@ export async function handleLoginSubmit(e, data, dispatch, navigate) {
     if (error.message === "Network Error") {
       return toast.error("Internal server error!");
     }
-    toast.error(error.response.data.message);
-    console.log(error.response.data.message);
+    error.response && toast.error(error.response.data.message);
+    console.log(error);
   }
 }

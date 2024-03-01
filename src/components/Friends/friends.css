@@ -1,0 +1,23 @@
+.friend-grid-item > * {
+  z-index: 10;
+}
+
+.friend-card-img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 40%;
+  object-fit: cover;
+  height: 100%;
+  opacity: 0.9;
+  z-index: 5;
+}
+
+.friend-grid-item .success {
+  color: var(--clr-success);
+}
+
+.friend-grid-item .danger {
+  color: var(--clr-danger);
+}
