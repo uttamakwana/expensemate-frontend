@@ -2,9 +2,14 @@ import { useRef, useState } from "react";
 import { Button, Links, MainLogo, SecondaryLogo } from "../../components";
 import { useNavigate } from "react-router-dom";
 import { CloseEyeIcon, EyeIcon } from "../../constants/icons.js";
-import { handleEyeClick, handleLoginSubmit } from "./utils.js";
+import {
+  handleEyeClick,
+  handleLoginSubmit,
+  handleSignInWithGoogle,
+} from "./utils.js";
 import "../styles.css";
 import { useDispatch, useSelector } from "react-redux";
+import { google } from "../../constants/images.js";
 
 const Login = () => {
   // navigate
@@ -90,6 +95,10 @@ const Login = () => {
         </div>
         {/* Login Button */}
         <Button loading={loading}>{loading ? "Logging in..." : "Login"}</Button>
+        <p className="text-center fs-extrasmall">OR</p>
+        <div className="google-btn" onClick={handleSignInWithGoogle}>
+          <img src={google} alt="google" /> Sign in with Google
+        </div>
         {/* Login Other Text */}
         <p
           className="form-other-text italic text-black-800 p-8 br-1 text-right"

@@ -627,3 +627,7 @@
   outline: none;
   border-radius: var(--border-radius);
 }
+
+.underline {
+ text-decoration: underline;
+}

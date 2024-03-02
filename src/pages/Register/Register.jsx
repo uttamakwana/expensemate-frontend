@@ -2,10 +2,15 @@ import { useRef, useState } from "react";
 import { Button, Links, MainLogo, SecondaryLogo } from "../../components";
 import { useNavigate } from "react-router-dom";
 import { CloseEyeIcon, EyeIcon } from "../../constants/icons.js";
-import { handleEyeClick, handleRegisterSubmit } from "./utils.js";
+import {
+  handleEyeClick,
+  handleRegisterSubmit,
+  handleSignUpWithGoogle,
+} from "./utils.js";
 import "../styles.css";
 import { useDispatch, useSelector } from "react-redux";
 import ButtonLoader from "../../constants/Loader/ButtonLoader.jsx";
+import { google } from "../../constants/images.js";
 
 const Register = () => {
   // navigate
@@ -170,6 +175,10 @@ const Register = () => {
             "Reigster"
           )}
         </Button>
+        <p className="text-center fs-extrasmall ">OR</p>
+        <div className="google-btn" onClick={handleSignUpWithGoogle}>
+          <img src={google} alt="google" /> Sign in with Google
+        </div>
         {/* Register Other Text */}
         <p
           className="form-other-text italic text-black-800 p-8 br-1 text-right"

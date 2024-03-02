@@ -1,6 +1,8 @@
 import toast from "react-hot-toast";
 import { server } from "../../api/api.js";
 import { setLoading, setClient } from "../../store/slice/user-slice.js";
+import { signInWithPopup } from "firebase/auth";
+import { auth, googleAuthProvider } from "../../firebase/app.js";
 
 export function handleEyeClick(ref, value, setValue) {
   setValue(!value);
@@ -41,5 +43,21 @@ export async function handleRegisterSubmit(e, formData, navigate, dispatch) {
   } else {
     dispatch(setLoading(false));
     toast.error("Please enter the same password!");
+  }
+}
+
+export async function handleSignUpWithGoogle() {
+  try {
+    const data = await signInWithPopup(auth, googleAuthProvider);
+    if (data) {
+      const response = await server.post("/client/register", {
+        name: data.user.displayName,
+        email: data.user.email,
+        avatar: data.user.photoURL,
+      });
+      console.log(response.data);
+    }
+  } catch (error) {
+    console.log(error);
   }
 }

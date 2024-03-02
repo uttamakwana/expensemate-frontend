@@ -1,9 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 // pages
-import { Dashbaord, Landing, Login, Register } from "./pages";
+import { Dashboard, Landing, Login, Register } from "./pages";
 import { Toaster } from "react-hot-toast";
-import GetUserContextProvider from "./context/GetUser";
-import Dashboard from "./pages/Dashboard/Dashboard";
 
 const App = () => {
   return (
@@ -13,15 +11,7 @@ const App = () => {
         <Route path="/" element={<Landing />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-
-        <Route
-          path="/dashboard/*"
-          element={
-            <GetUserContextProvider>
-              <Dashboard />
-            </GetUserContextProvider>
-          }
-        />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </main>
   );
