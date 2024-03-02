@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { Button, Links, MainLogo, SecondaryLogo } from "../../components";
+import { Links, MainLogo, SecondaryLogo } from "../../components";
 import { useNavigate } from "react-router-dom";
 import { CloseEyeIcon, EyeIcon } from "../../constants/icons.js";
 import {
@@ -94,9 +94,22 @@ const Login = () => {
           </div>
         </div>
         {/* Login Button */}
-        <Button loading={loading}>{loading ? "Logging in..." : "Login"}</Button>
+        <button
+          className={`btn br-10 bg-primary-400 text-white-900 fw-600 fs-button flex-center ${
+            loading && "button-loading"
+          }`}
+          disabled={loading}
+        >
+          {loading ? "Logging in..." : "Login"}
+        </button>
         <p className="text-center fs-extrasmall">OR</p>
-        <div className="google-btn" onClick={handleSignInWithGoogle}>
+        {/* Sing in with Google Button */}
+        <div
+          className="google-btn"
+          onClick={() => {
+            handleSignInWithGoogle(dispatch, navigate);
+          }}
+        >
           <img src={google} alt="google" /> Sign in with Google
         </div>
         {/* Login Other Text */}

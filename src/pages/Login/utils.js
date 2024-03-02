@@ -15,6 +15,9 @@ export function handleEyeClick(ref, value, setValue) {
 
 export async function handleLoginSubmit(e, data, dispatch, navigate) {
   e.preventDefault();
+  if (!data.email || !data.password) {
+    return toast.error("Both fields are required!");
+  }
   dispatch(setLoading(true));
   try {
     const response = await server.post("/user/login", {
@@ -43,18 +46,24 @@ export const handleSignInWithGoogle = async (dispatch, navigate) => {
   try {
     const data = await signInWithPopup(auth, googleAuthProvider);
     if (data) {
-      const response = await server.post("/client/login", {
+      const response = await server.post("/user/login", {
         email: data.user.email,
       });
-      dispatch(setClient(response.data.data.client));
+      dispatch(setClient(response.data.data.user));
       localStorage.setItem(
         "expensemate-client",
-        JSON.stringify(response.data.data.client)
+        JSON.stringify(response.data.data.user)
       );
       toast.success(response.data.message);
       navigate("/dashboard");
+    } else {
+      toast.error("Something went wrong!");
     }
   } catch (error) {
+    if (error.message === "Network Error") {
+      return toast.error("Internal server error!");
+    }
+    error.response && toast.error(error.response.data.message);
     console.log(error);
   }
 };

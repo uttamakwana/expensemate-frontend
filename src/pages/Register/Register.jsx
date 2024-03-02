@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { Button, Links, MainLogo, SecondaryLogo } from "../../components";
+import { Links, MainLogo, SecondaryLogo } from "../../components";
 import { useNavigate } from "react-router-dom";
 import { CloseEyeIcon, EyeIcon } from "../../constants/icons.js";
 import {
@@ -11,6 +11,7 @@ import "../styles.css";
 import { useDispatch, useSelector } from "react-redux";
 import ButtonLoader from "../../constants/Loader/ButtonLoader.jsx";
 import { google } from "../../constants/images.js";
+import ImageUploader from "../../components/ui/ImageUploader/ImageUploader.jsx";
 
 const Register = () => {
   // navigate
@@ -30,6 +31,7 @@ const Register = () => {
   });
   const [isShowPassword, setIsShowPassword] = useState(false);
   const [isShowConfirmPassword, setIsShowConfirmPassword] = useState(false);
+  const [file, setFile] = useState();
 
   return (
     <main className="register-page | min-h-100 p-1 relative">
@@ -38,7 +40,7 @@ const Register = () => {
         action=""
         className="form | readable-container absolute-center br-5 flex-col gap-1"
         onSubmit={(e) =>
-          handleRegisterSubmit(e, registerFormData, navigate, dispatch)
+          handleRegisterSubmit(e, registerFormData, navigate, dispatch, file)
         }
       >
         <MainLogo />
@@ -167,16 +169,28 @@ const Register = () => {
             ) : null}
           </div>
         </div>
+        <ImageUploader file={file} setFile={setFile} />
         {/* Register Button */}
-        <Button>
+        <button
+          className={`btn br-10 bg-primary-400 text-white-900 fw-600 fs-button flex-center ${
+            loading && "button-loading"
+          }`}
+          disabled={loading}
+        >
           {loading ? (
             <ButtonLoader width={"1rem"} height={"1rem"} />
           ) : (
             "Reigster"
           )}
-        </Button>
+        </button>
         <p className="text-center fs-extrasmall ">OR</p>
-        <div className="google-btn" onClick={handleSignUpWithGoogle}>
+        {/* Sign up with Google Button */}
+        <div
+          className="google-btn"
+          onClick={() => {
+            handleSignUpWithGoogle(dispatch, navigate);
+          }}
+        >
           <img src={google} alt="google" /> Sign in with Google
         </div>
         {/* Register Other Text */}

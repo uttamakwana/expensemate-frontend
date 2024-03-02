@@ -1,0 +1,8 @@
+.image-upload-form-group {
+ border: 2px dashed var(--clr-white-500);
+ padding: 1rem;
+}
+
+.image-upload-form-group p {
+ font-size: clamp(14px, 2vw 1rem);
+}

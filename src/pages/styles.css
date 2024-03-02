@@ -10,6 +10,8 @@
 
     input:focus + span,
     input:active + span,
+    input:autofill + span,
+    input:-webkit-autofill + span,
     span.active {
       top: 0;
       left: 8px;
@@ -53,6 +55,7 @@
 
 .form button {
   position: relative;
+  font-size: clamp(1rem, 2vw, 1.15rem);
 }
 
 .form button:focus-visible {
@@ -95,29 +98,29 @@
 }
 
 .create-transaction-btn {
- right: 1rem;
- bottom: 10svh;
- border: 1px solid var(--clr-white-500);
- font-size: clamp(1rem, 3vw, 2rem);
- color: var(--clr-primary-400);
+  right: 1rem;
+  bottom: 10svh;
+  border: 1px solid var(--clr-white-500);
+  font-size: clamp(1rem, 3vw, 2rem);
+  color: var(--clr-primary-400);
 }
 
 .google-btn {
- border: 1px solid var(--clr-white-500);
- padding: 0.75rem 1.25rem;
- display: flex;
- align-items: center;
- justify-content: center;
- gap: 8px;
- font-size: clamp(14px, 2vw, 1rem);
- background-color: transparent;
- border-radius: 4px;
- transition: transform 200ms ease;
- cursor: pointer;
+  border: 1px solid var(--clr-white-500);
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  background-color: transparent;
+  border-radius: 4px;
+  transition: transform 200ms ease;
+  cursor: pointer;
 }
 
 .google-btn:hover {
- transform: translateY(1px);
+  transform: translateY(1px);
 }
 
 .google-btn img {

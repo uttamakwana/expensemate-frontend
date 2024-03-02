@@ -13,7 +13,7 @@ const Landing = () => {
         <h1 className="fw-800">
           Welcome to
           <span className="italic fw-900 text-primary-400 px-8">
-            ExpenseMate!
+            SplitWise!
           </span>
         </h1>
         <p>
