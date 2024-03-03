@@ -1,0 +1,66 @@
+.friend-card {
+  padding: 1rem;
+  border: 1px solid var(--clr-white-500);
+}
+
+.friend-card > * {
+  z-index: 10;
+}
+
+.friend-card-name {
+  padding: 0.25rem 0.75rem;
+  background-color: var(--clr-primary-400);
+  width: max-content;
+  color: var(--clr-white-900);
+  border-radius: 100vmax;
+}
+
+.friend-card img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  object-fit: cover;
+  width: 35%;
+  z-index: -1;
+}
+
+.friend-card-btn {
+  display: block;
+  margin-left: auto;
+  margin-top: 1rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 100vmax;
+  border: none;
+  outline: none;
+  background-color: var(--clr-white-900);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--clr-white-500);
+}
+
+.friend-card-btn:hover {
+  background-image: linear-gradient(
+    to bottom,
+    var(--clr-primary-400),
+    var(--clr-accent-400)
+  );
+  border: none;
+  color: var(--clr-white-900);
+}
+
+.friend-card-summary span {
+  padding: 0.25rem;
+  border: 1px solid var(--clr-white-500);
+  border-radius: 100vmax;
+}
+
+.friend-card-summary .success {
+  background: var(--clr-success);
+  color: var(--clr-white-900);
+}
+
+.friend-card-summary .danger {
+  background: var(--clr-danger);
+  color: var(--clr-white-900);
+}

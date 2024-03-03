@@ -8,7 +8,7 @@ import { getUserInfo } from "../../utils/getUserInfo.js";
 import { useDispatch } from "react-redux";
 
 const RequestCard = ({ client, friendRequest }) => {
-  const imageUrl = getImageUrl(client);
+  const imageUrl = getImageUrl(friendRequest);
   const dispatch = useDispatch();
 
   async function handleRequest(status) {

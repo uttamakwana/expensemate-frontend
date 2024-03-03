@@ -37,7 +37,10 @@ const Dashboard = () => {
             element={<Users client={client} navigate={navigate} />}
           />
           <Route path="/transaction" element={<Transaction />} />
-          <Route path="/friends" element={<Friends />} />
+          <Route
+            path="/friends"
+            element={<Friends client={client} navigate={navigate} />}
+          />
           <Route path="/history" element={<History />} />
         </Routes>
       </div>
