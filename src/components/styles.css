@@ -1,19 +1,51 @@
-.grid-item {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid var(--clr-white-500);
+.main-cards {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 1rem;
 }
 
-.grid-item-invert {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  gap: 1rem;
-  padding: 10px 1rem;
-  border-radius: 10px;
-  border: 1px solid var(--clr-white-500);
+.main-card {
+ flex-grow: 1;
+ padding: 1rem;
+ border: 1px solid var(--clr-white-500);
+ border-radius: 10px;
+ display: flex;
+ flex-direction: column;
+ gap: 4px;
+ box-shadow: 0 1px 1px var(--clr-white-500);
+}
+
+.main-card-subheading {
+ font-size: clamp(14px, 2vw, 1rem);
+}
+
+.main-card p {
+ font-size: clamp(14px, 2vw, 1rem);
+}
+
+.main-card-heading {
+ padding: .25rem .75rem;
+ background-image: linear-gradient(to right, var(--clr-primary-400), var(--clr-primary-900));
+ width: max-content;
+ color: var(--clr-white-900);
+ border-radius: 100vmax;
+ font-size: clamp(1rem, 3vw, 1.25rem) !important;
+}
+
+.main-card button {
+ width: max-content;
+ padding: .5rem .75rem;
+ border: none;
+ outline: none;
+ margin-left: auto;
+ margin-top: 1rem;
+ border-radius: 100vmax;
+ background-color: var(--clr-white-900);
+ border: 1px solid var(--clr-white-500);
+ font-weight: 500;
+}
+
+.main-card button:hover {
+ background-image: linear-gradient(to right, var(--clr-primary-400), var(--clr-accent-400));
+ color: var(--clr-white-900);
 }

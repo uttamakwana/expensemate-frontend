@@ -1,22 +1,73 @@
-.header-navigation{
+.header-navigation {
+  display: flex !important;
+}
+
+.header-nav {
+  color: var(--clr-white-900);
+  font-size: clamp(1.5rem, 2vw, 1.75rem);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.header-nav.active {
+  background: var(--clr-white-900);
+  color: var(--clr-primary-400);
+}
+
+.add-transaction-btn {
+  padding: 0.75rem 1rem;
+  background: var(--clr-white-900);
+  border-radius: 100vmax;
+  border: none;
+  outline: none;
+  font-weight: 500;
+  font-size: clamp(15px, 2vw, 1rem);
+}
+
+.header-avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.header-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.big-logo-heading {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.big-logo-heading + p {
+  font-size: clamp(10px, 1vw, 12px);
+}
+
+.add-transaction-mobile-btn {
   display: none !important;
 }
 
-@media (width <= 560px) {
-  .header-navigation {
+@media (width <= 650px) {
+  .add-transaction-btn {
+    display: none !important;
+  }
+
+  .add-transaction-mobile-btn {
     display: flex !important;
-  }
-
-  .header-nav {
-   color: var(--clr-white-900);
-   font-size: clamp(1.5rem, 3vw, 2rem);
-   cursor: pointer;
-   padding: 8px;
-   border-radius: 10px;
-  }
-
-  .header-nav.active {
-   background: var(--clr-white-900);
-   color: var(--clr-primary-400);
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    padding: 1rem;
+    background: var(--clr-primary-400);
+    color: var(--clr-white-900);
+    border: 1px solid var(--clr-white-900);
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    border-radius: 50%;
   }
 }

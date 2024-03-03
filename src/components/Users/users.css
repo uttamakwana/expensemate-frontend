@@ -1,0 +1,75 @@
+.users-cards {
+  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.dashboard-users-input-container {
+  max-width: 600px;
+  width: 100%;
+  margin-inline: auto;
+}
+
+.dashboard-users-input-container input {
+  width: 100%;
+  padding: 1rem 2.5rem;
+  border: 1px solid var(--clr-white-500);
+  border-radius: 4px;
+}
+
+.dashboard-users-input-container input:focus,
+.dashboard-users-input-container input:active {
+  outline: 1px solid var(--clr-primary-400);
+}
+
+.dashboard-users-input-container input::placeholder {
+ color: var(--clr-black-800);
+ font-weight: 500;
+}
+
+.dashboard-users-input-container svg {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+ color: var(--clr-black-800);
+}
+
+.user-card {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--clr-white-500);
+  border-radius: 10px;
+  /* width: 300px; */
+}
+
+.user-card-avatar {
+  height: 50px !important;
+  width: 50px !important;
+  overflow: hidden;
+}
+
+.user-card-avatar img {
+  height: 100% !important;
+  width: 100% !important;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.user-card button {
+  margin-left: auto;
+  padding: 0.5em 0.75em;
+  border-radius: 100vmax;
+  border: none;
+  background-color: var(--clr-white-900);
+  border: 1px solid var(--clr-white-500);
+  outline: none;
+}
+
+.user-card button:hover {
+  background-image: linear-gradient(
+    to right,
+    var(--clr-primary-400),
+    var(--clr-primary-900)
+  );
+  color: var(--clr-white-900);
+}

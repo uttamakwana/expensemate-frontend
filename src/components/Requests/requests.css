@@ -1,0 +1,43 @@
+.dashboard-requests {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1rem;
+}
+
+.friend-request-card-avatar {
+  width: 50px !important;
+  height: 50px !important;
+  overflow: hidden;
+}
+
+.friend-request-card-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.friend-request-card {
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: 1px solid var(--clr-white-500);
+}
+.friend-request-card-buttons div {
+  cursor: pointer;
+}
+
+.friend-request-card-buttons div:first-child {
+  border: 1px solid var(--clr-success);
+  color: var(--clr-success);
+}
+
+.friend-request-card-buttons div:last-child {
+  border: 1px solid var(--clr-danger);
+  color: var(--clr-danger);
+}
+
+.friend-request-card-buttons svg {
+  width: clamp(1.25rem, 2vw, 1.5rem);
+  height: clamp(1.25rem, 2vw, 1.5rem);
+  cursor: pointer;
+}
