@@ -36,7 +36,10 @@ const Dashboard = () => {
             path="/users"
             element={<Users client={client} navigate={navigate} />}
           />
-          <Route path="/transaction" element={<Transaction />} />
+          <Route
+            path="/transaction"
+            element={<Transaction client={client} />}
+          />
           <Route
             path="/friends"
             element={<Friends client={client} navigate={navigate} />}
