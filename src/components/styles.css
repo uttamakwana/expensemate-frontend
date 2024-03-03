@@ -38,7 +38,7 @@
  border: none;
  outline: none;
  margin-left: auto;
- margin-top: 1rem;
+ margin-top: auto;
  border-radius: 100vmax;
  background-color: var(--clr-white-900);
  border: 1px solid var(--clr-white-500);

@@ -10,6 +10,7 @@ import {
   Users,
 } from "../../components";
 import { Route, Routes } from "react-router-dom";
+import FriendTransactions from "../../components/FriendTransactions/FriendTransactions.jsx";
 
 const Dashboard = () => {
   console.count("Dashboard rendered!");
@@ -44,7 +45,14 @@ const Dashboard = () => {
             path="/friends"
             element={<Friends client={client} navigate={navigate} />}
           />
-          <Route path="/history" element={<History />} />
+          <Route
+            path="/history"
+            element={<History client={client} navigate={navigate} />}
+          />
+          <Route
+            path="/friend/:id"
+            element={<FriendTransactions client={client} navigate={navigate} />}
+          />
         </Routes>
       </div>
     </div>

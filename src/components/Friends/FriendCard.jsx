@@ -1,8 +1,11 @@
 /* eslint-disable react/prop-types */
 import "./friends.css";
 import { getImageUrl } from "../../utils/getImageUrl.js";
+import { useNavigate } from "react-router-dom";
 
 const FriendCard = ({ friend }) => {
+  const navigate = useNavigate();
+
   const imageUrl = getImageUrl(friend);
   let amountClass;
   if (friend.amount === 0) {
@@ -26,7 +29,10 @@ const FriendCard = ({ friend }) => {
         You will get{" "}
         <span className={`underline ${amountClass}`}>{friend.amount}</span>
       </p>
-      <button className="friend-card-btn max-content">
+      <button
+        className="friend-card-btn max-content"
+        onClick={() => navigate(`/dashboard/friend/${friend._id}`)}
+      >
         See All Transactions
       </button>
       <img src={imageUrl} alt="avatar" />

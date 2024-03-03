@@ -3,9 +3,21 @@ import { landing } from "../../constants/images.js";
 import { Button } from "../../components";
 import "./landing.css";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
 
 const Landing = () => {
   const navigate = useNavigate();
+  const { client } = useSelector((state) => state.userReducer);
+  const clientInLocalStorage = JSON.parse(
+    localStorage.getItem("expensemate-client")
+  );
+
+  useEffect(() => {
+    if (client && clientInLocalStorage) {
+      return navigate("/dashboard");
+    }
+  }, [client, clientInLocalStorage, navigate]);
   return (
     <main className="landing-page | h-100 relative flex-center">
       <img src={landing} alt="landing-page" />

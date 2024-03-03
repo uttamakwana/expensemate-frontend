@@ -32,23 +32,25 @@ const Header = ({ navigate }) => {
           </p>
         </div>
         <div className="header-navigation flex ai-center gap-1">
-          {currentPage === "transaction" ? (
+          {currentPage !== "dashboard" && (
             <div
-              className={`header-nav  ${
+              className={`header-nav main-home-icon  ${
                 currentPage === "dashboard" && "active"
               }`}
               onClick={() => navigate("/dashboard")}
             >
               <FaHome />
             </div>
-          ) : (
+          )}
+          {currentPage !== "transaction" && (
             <button
               className="add-transaction-btn flex-center gap-4"
               onClick={() => navigate("/dashboard/transaction")}
             >
-              <PlusIcon /> Add Transaction
+              <PlusIcon /> Add Expense
             </button>
           )}
+
           <button
             className="add-transaction-mobile-btn flex-center gap-4"
             onClick={() => {
@@ -68,10 +70,15 @@ const Header = ({ navigate }) => {
             <SearchIcon />
           </div>
           <div
-            className={`header-nav  ${currentPage === "requests" && "active"}`}
+            className={`header-nav header-request-nav  ${
+              currentPage === "requests" && "active"
+            }`}
             onClick={() => navigate("/dashboard/requests")}
           >
             <RequestIcon />
+            <span className="header-request-nav-span">
+              {client.friendRequests.length}
+            </span>
           </div>
           <div className="header-avatar">
             <img src={imageUrl} alt="avatar" />

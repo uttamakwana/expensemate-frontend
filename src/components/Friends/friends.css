@@ -45,7 +45,6 @@
     var(--clr-primary-400),
     var(--clr-accent-400)
   );
-  border: none;
   color: var(--clr-white-900);
 }
 

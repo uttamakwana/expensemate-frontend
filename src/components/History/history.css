@@ -1,0 +1,18 @@
+.transaction-card {
+  padding: 1rem;
+  padding-right: 2.5rem;
+  border: 1px solid var(--clr-white-500);
+}
+
+.transaction-card .amount {
+  right: 0;
+  top: 0;
+  padding: .25rem;
+  border-left: 1px solid var(--clr-white-500);
+  border-bottom: 1px solid var(--clr-white-500);
+  border-left: 1px solid var(--clr-white-500);
+  background-color: var(--clr-primary-400);
+  color: var(--clr-white-900);
+  font-weight: 600;
+  border-bottom-left-radius: 10px;
+}

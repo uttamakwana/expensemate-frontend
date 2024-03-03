@@ -1,0 +1,6 @@
+.friend-transaction-card {
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--clr-white-500);
+  box-shadow: 0 1px 1px var(--clr-white-500);
+}
