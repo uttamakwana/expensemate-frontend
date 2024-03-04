@@ -3,6 +3,8 @@ import "./history.css";
 import TransactionCard from "./TransactionCard.jsx";
 
 const History = ({ client, navigate }) => {
+  document.title = "SplitWise | History";
+
   if (client.transactions.length === 0) {
     return (
       <div className="flex-col gap-8 py-1">

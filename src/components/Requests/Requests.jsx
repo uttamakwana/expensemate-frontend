@@ -2,6 +2,8 @@
 import RequestCard from "./RequestCard.jsx";
 
 const Requests = ({ client, navigate }) => {
+  document.title = "SplitWise | Requests";
+
   if (client.friendRequests.length === 0) {
     return (
       <div className="flex-col gap-8 py-1">

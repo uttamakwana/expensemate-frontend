@@ -22,7 +22,7 @@ const Header = ({ navigate }) => {
           onClick={() => navigate("/dashboard")}
         >
           <h1 className="big-logo-heading | text-white-900">
-            Expense<span className="italic text-white-400 ">Mate</span>
+            Split<span className="italic text-white-400 ">Wise</span>
           </h1>
           <p
             className="py-4 px-8 oval bg-primary-400 text-white-900 flex-center"

@@ -6,6 +6,8 @@ import { SearchIcon } from "../../constants/icons.js";
 import { useEffect, useRef, useState } from "react";
 
 const Users = ({ client, navigate }) => {
+  document.title = "SplitWise | Search Users";
+
   const [allUsers] = useGetAllUsers(client);
   const [filteredUsers, setFilteredUsers] = useState([]);
   const searchRef = useRef(null);

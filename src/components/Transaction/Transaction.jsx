@@ -12,6 +12,8 @@ import Loader from "../../constants/Loader/Loader.jsx";
 import { getUserInfo } from "../../utils/getUserInfo.js";
 
 const Transaction = ({ client }) => {
+  document.title = "SplitWise | Create Transaction";
+
   const { loading } = useSelector((state) => state.userReducer);
   const dispatch = useDispatch();
   const [showSplitFriends, setShowSplitFriends] = useState([]);

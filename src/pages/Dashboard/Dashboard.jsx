@@ -15,6 +15,7 @@ import FriendTransactions from "../../components/FriendTransactions/FriendTransa
 const Dashboard = () => {
   console.count("Dashboard rendered!");
   const [client, navigate] = useUserLoggedIn();
+  document.title = "SplitWise | Dashboard";
   // const { client } = useSelector((state) => state.userReducer);
 
   return (
