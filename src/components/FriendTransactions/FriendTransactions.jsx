@@ -5,9 +5,8 @@ import "./friend-transaction.css";
 
 const FriendTransactions = ({ client, navigate }) => {
   const { id } = useParams();
-  const transctionsToShow = client.friends.find(
-    (f) => f._id === id
-  ).transactions;
+  const thatFriend = client.friends.find((f) => f._id === id);
+  const transctionsToShow = thatFriend.transactions;
   return transctionsToShow.length > 0 ? (
     <div className="friend-transactions-card responsive-grid py-1">
       {transctionsToShow.map((transaction) => (
@@ -21,9 +20,14 @@ const FriendTransactions = ({ client, navigate }) => {
     </div>
   ) : (
     <div className="flex-col gap-8 py-1">
-      <p className="text-center">No transactions to show</p>
-      <button onClick={() => navigate("/dashboard/friends")}>
-        Go to friend
+      <p className="text-center">
+        No transactions with <span className="fw-600">{thatFriend.name}</span>
+      </p>
+      <button
+        onClick={() => navigate("/dashboard/friends")}
+        className="btn bg-primary-400 text-white-900 fw-600 oval max-content margin-inline-auto"
+      >
+        Go to friends
       </button>
     </div>
   );

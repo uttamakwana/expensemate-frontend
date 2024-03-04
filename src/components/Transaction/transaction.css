@@ -56,6 +56,15 @@
   padding: 0.5rem 0.75rem !important;
 }
 
+.transaction-split-group input {
+ outline: none;
+}
+
+.transaction-split-group input:focus,
+.transaction-split-group input:active {
+  border: 1px solid var(--clr-primary-900);
+}
+
 .show-friends {
   display: flex;
   gap: 1rem;
@@ -85,7 +94,14 @@
   width: 100%;
   margin-bottom: 0.5rem;
   border: 1px solid var(--clr-white-500);
+  outline: none;
   padding: 1rem !important;
+  border-radius: 5px;
+}
+
+.split-friend-input-group input:focus,
+.split-friend-input-group input:active {
+  border: 1px solid var(--clr-primary-400);
 }
 
 .split-friend-card.added {

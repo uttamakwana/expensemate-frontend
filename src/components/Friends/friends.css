@@ -17,12 +17,12 @@
 
 .friend-card img {
   position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  height: 100%;
+  right: 1rem;
+  top: 1rem;
   object-fit: cover;
-  width: 35%;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
   z-index: -1;
 }
 

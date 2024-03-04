@@ -1,3 +1,5 @@
+import { expense, friends } from "../../constants/images.js";
+
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 // eslint-disable-next-line react/prop-types
@@ -20,21 +22,37 @@ const Main = ({ client, navigate }) => {
         <div className="dashboard-main-card main-card">
           <p className="main-card-heading">Expenses</p>
           <p className="main-card-subheading">Track your daily expenses!</p>
-          <p>Total Expense: {totalExpense}</p>
-          <p>Total Personal Expense:{totalPersonalExpense}</p>
-          <p>Number of Transactions:{client.transactions.length}</p>
+          <p>
+            <span className="fw-600">Total Expense:</span> {totalExpense}
+          </p>
+          <p>
+            <span className="fw-600">Total Personal Expense:</span>
+            {totalPersonalExpense}
+          </p>
+          <p>
+            <span className="fw-600">Number of Transactions:</span>
+            {client.transactions.length}
+          </p>
           <button onClick={() => navigate("/dashboard/history")}>
             See All Transactions
           </button>
+          <img src={expense} alt="expense-img" />
         </div>
         <div className="dashboard-main-card main-card">
           <p className="main-card-heading">Friends</p>
           <p className="main-card-subheading">Split bills among friends!</p>
-          <p>Total Friends: {client.friends.length}</p>
-          <p>Total Friend Expense: {totalFriendExpense}</p>
+          <p>
+            <span className="fw-600">Total Friends:</span>{" "}
+            {client.friends.length}
+          </p>
+          <p>
+            <span className="fw-600">Total Friend Expense:</span>{" "}
+            {totalFriendExpense}
+          </p>
           <button onClick={() => navigate("/dashboard/friends")}>
             See All Friends
           </button>
+          <img src={friends} alt="expense-img" />
         </div>
       </div>
     </main>
