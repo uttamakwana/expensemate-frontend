@@ -3,7 +3,7 @@ export const getImageUrl = (client) => {
   if (client?.avatar?.includes("googleusercontent")) {
     url = client.avatar;
   } else {
-    url = `http://localhost:4000/${client.avatar}`;
+    url = `https://splitwise-backend-k48h.onrender.com/${client.avatar}`;
   }
   return url;
 };

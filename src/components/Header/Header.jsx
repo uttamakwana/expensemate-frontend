@@ -4,7 +4,7 @@ import "../styles.css";
 import "./header.css";
 import { PlusIcon, RequestIcon, SearchIcon } from "../../constants/icons";
 import { useSelector } from "react-redux";
-import { getImageUrl } from "../../pages/Dashboard/utils";
+import { getImageUrl } from "../../utils/getImageUrl";
 import { FaHome } from "react-icons/fa";
 
 const Header = ({ navigate }) => {
