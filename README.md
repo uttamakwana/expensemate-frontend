@@ -1,51 +1,108 @@
-# React + Vite | Starter Boiler Plate Code for effective and maintained development
+# SplitWise
 
-## components
+SplitWise is an application simplify your daily life by tracking your daily expenses and helps to split bills among friends easily.
 
-Create your UI Components here, such as Header, Footer, Sidebar, Button, Input, Card, CardList, etc.
+## Functionalities
 
-## containers
+- User can sign up and sign in to an account
+- User can create expense history or can split bills among friends
+- User can create friends by sending a request to a registered user
 
-Create your UI Containers here, such as Max-Containers, Small-Containers for holding the components for better responsiveness
+## Installation
 
-## pages
+- clone this repository with the following url into your local machine in any folder
 
-Create your pages, if you have routing in your application. Create different pages such as Home Page, Dashboard, Login, Register, etc. and then implement the routing functionality
+```bash
+  git clone https://github.com/uttamakwana/expensemate-frontend.git
+```
+
+- open your code editor
+
+- open the terminal
+
+- install all the necessary dependencies
+
+```bash
+npm install
+```
+
+- run the development server
+
+```bash
+npm run dev
+```
+
+## Overview
+
+This project includes serveral folders. Let's deep dive into into
+
+### main.jsx
+
+origin (root directory) of the project
+
+### App.jsx
+
+placed all the routing and components inside it
+
+### components
+
+This components includes all the static components and can be reusable such as Loader, Header, Footer and some UI components like button, headings
+
+### pages
+
+It contains all the pages which are navigable like login, register, home (dashboard), friends, friend-requests, create-transaction, all users.
 
 ## store
 
-Create your Context & Redux store here if your application needs effective state management
-
-## constants
-
-Add all your static files imports and export such as images and icons and other constant data
-
-## assets
-
-Add all your static files such as images, svgs, pngs, logos, images, icons and other stuff
-
-## styles
-
-Create your all global styles for typography, colors, and all the utility styles needed for better and faster development
-
-## utils
-
-Create your utility functions here such as formate time, remove last characters, formate date, etc.
+Redux store for state management of client and other information such as loading, client's friend details and all users details
 
 ## hooks
 
-Create your custom hooks here for the better readability and decrease redundancy
+It includes custom hooks for more code readability and lesser redundancy
 
-## main.jsx
+## constants
 
-if you are implmenting routing and state management then make sure to add providers and store in the main.jsx file
+It includes static/constants files necessary for projects such as icons, images [import/export]
 
-## App.jsx
+## firebase
 
-Add all your components, pages, containers and other stuff here to make it more navigatable.
+It includes firebase configuration for sign in & sign up with google accounts
 
-## extra dependencies
+## styles
 
-### react-icons
+It includes utility, colors, fonts and all index stylesheet necessary for the frontend
 
-React Icons are already installed for the better user experience
+## utils
+
+It includes utility functions
+
+## assets
+
+It includes all the static files such as images, svg and logos
+
+## api
+
+It includes API configuration to access backend services
+
+
+## netlify.toml 
+
+Basic netlify configuration for routing related to the deployment
+
+## public
+
+It includes all the static files needed in the application
+
+## package.json
+
+Contains metadata and information related to the project and store all the dependencies
+
+## index.html
+
+Root of the application which will be visible to the client at the last
+
+## .gitignore
+To ignore some files not needed to push in the git repository
+
+## vite.config.js
+Some basic configuration related to the vite
